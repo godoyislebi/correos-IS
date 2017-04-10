@@ -1,0 +1,45 @@
+.col-md-12.filter-box.grey-box.filtros-productos
+  .col-md-6
+    .label-filter
+      .col-md-3.label-filter
+        | Productos
+      .col-md-9
+        select#products
+          option(value='Todos los productos', selected="selected") Todos los productos
+          option(value='Paquete Express a domicilio') Paquete Express a domicilio
+          option(value='Documento Express') Documento Express
+          option(value='Paquete Express AM') Paquete Express AM
+          option(value='Documento Express AM') Documento Express AM
+          option(value='Paquete Express Sucursal') Paquete Express Sucursal
+          option(value='Distribución física') Distribución física
+
+  .clearfix
+  .col-md-6
+    .label-filter
+      .col-md-3.label-filter
+        | Regiones
+      .col-md-9
+        select#regiones(multiple='multiple')
+          option(value='I Región de Tárapaca') I Región de Tárapaca
+          option(value='II Región de Antofagasta') II Región de Antofagasta
+          option(value='III Región de Atacama') III Región de Atacama
+          option(value='IV Región de Coquimbo') IV Región de Coquimbo
+          option(value='V Región de Valparaíso') V Región de Valparaíso
+          option(value='VI Región de OHiggins') VI Región de O'Higgins
+
+  .col-md-6
+    .label-filter
+      .col-md-3.label-filter
+        | Comuna
+      .col-md-9
+        select#comuna(multiple='multiple')
+          option(value='Algarrobo') Algarrobo
+          option(value='Cabildo') Cabildo
+          option(value='La Calera') La Calera
+          option(value='Calle Larga') Calle Larga
+          option(value='Cartagena') Cartagena
+          option(value='Casablanca') Casablanca
+
+  .col-md-12.center
+    button.btn-rounded-dark.center(type='button')
+      | Filtrar indicadores de entrega

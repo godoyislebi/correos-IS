@@ -1,0 +1,25 @@
+doctype html
+html
+  head
+    include resources.jade
+
+    title Correos de Chile
+
+  body   
+    .container-fluid#indicadores-de-gestion
+      .col-md-3.col-sm-3.column-1
+        include menu.jade
+      
+      .col-md-9.col-sm-9.nopad.column-2
+        .hidden-xs
+          include header.jade
+
+        .col-md-12.content
+          .white-box-content.col-md-12
+            //-Aqui comienda el contenido
+            .col-md-12
+              | dashboard
+
+        include footer.jade
+
+    include modales.jade

@@ -1,0 +1,131 @@
+doctype html
+html
+  head
+    include resources.jade
+
+    title Correos de Chile
+
+  body   
+    .container-fluid#indicadores-de-gestion
+      .col-md-3.col-sm-3.column-1
+        include menu.jade
+
+      .col-md-9.col-sm-9.nopad.column-2
+        .hidden-xs
+          include header.jade
+
+
+        .col-md-12.content
+          .white-box-content.col-md-12
+            //-Aqui comienda el contenido
+            .col-md-12
+              h2.title-section
+                | Indicadores de gestión
+              h3.lead
+                | Prómixas Entregas
+              p.date-info
+                | Datos actualizados al 02/02/2017 a las 00:00 horas
+                
+            //-Filtros
+            .col-md-12
+              include filtros-productos.jade
+
+            .col-md-12
+              .title-results
+                | Resultado de 
+                strong
+                  | "Todos los productos", "Todas las Regiones", "Todas las comunas"
+
+
+            .col-md-12
+              h3.subtitle
+                | Gráfico de indicadores de Próximas Entregas
+
+              //- GRAFICO DE PROXIMAS ENTREGAS
+              .grey-box
+                .col-md-4
+                  select.selectpicker.select-chart
+                    option Próximas entregas por dia
+                    option Próximas entregas por comuna
+
+                  .titulo-tabla
+                    | Sucesivas Entregas Totales
+
+                #proximas-entregas-chart
+
+
+
+            .col-md-12
+              h3.subtitle
+                | Tabla de indicadores de Próximas Entregas
+              span.descargas
+                ul
+                  li
+                    | Descargar Archivo
+                  li
+                    a
+                      i.glyphicon.glyphicon-download-alt
+                      | XLM
+                  li
+                    a
+                      i.glyphicon.glyphicon-download-alt
+                      | TXT
+                  li
+                    a
+                      i.glyphicon.glyphicon-download-alt
+                      | TXT
+
+
+              table(data-toggle="table"
+                   data-url="https://api.github.com/users/wenzhixin/repos"
+                   data-query-params="queryParams"
+                   data-pagination="true", data-pagination-h-align="center", data-pagination-detail="false").table.table-hover.table.table-striped.table-responsive.table-bordered.table-condensed
+                thead
+                  tr
+                    th(data-sortable='true', rowspan='2', data-field='id', tabindex='0')
+                      | Calificación
+                    th(rowspan='2', data-field='forks_count', tabindex='0')
+                      | Comuna
+                      .fht-cell
+                    th(colspan='5')
+                      | Dias
+                      .fht-cell
+                    th(rowspan='2', data-field='forks_count', tabindex='0')
+                      | Total
+                      .fht-cell
+                    th(rowspan='2', data-field='forks_count', tabindex='0')
+                      | Porcentaje
+                      .fht-cell
+                    
+                  tr
+                    th(data-sortable='true',data-field='forks_count', tabindex='0')
+                      | 03/02
+                      .fht-cell
+                    th(data-sortable='true',data-field='forks_count', tabindex='0')
+                      | 04/02
+                      .fht-cell
+                    th(data-sortable='true',data-field='forks_count', tabindex='0')
+                      | 05/02
+                      .fht-cell
+                    th(data-sortable='true',data-field='forks_count', tabindex='0')
+                      | 06/02
+                      .fht-cell
+                    th(data-sortable='true',data-field='forks_count', tabindex='0')
+                      | 07/02
+                      .fht-cell
+
+              ul.leyenda-color
+                li
+                  .red.circle
+                  p 0% - 84%
+                li
+                  .orange.circle
+                  p 85 - 89%
+                li
+                  .green.circle
+                  p 90% - 100%
+
+        
+        include footer.jade
+                  
+    include modales.jade

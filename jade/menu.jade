@@ -1,0 +1,104 @@
+.row.menu-lateral
+  .col-md-12.hidden-xs.logo
+    a(href="#")
+      img(src="./assets/logo.png")
+
+  .col-md-12.col-xs-12.nopad
+    .sidebar-nav
+      .navbar.navbar-default(role='navigation')  
+        .navbar-header        
+          button.navbar-toggle(type='button', data-toggle='collapse', data-target='.sidebar-navbar-collapse')
+            span.sr-only Toggle navigation
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+          span.visible-xs.navbar-brand
+            a.logo-xs(href="#")
+              img(src="./assets/logo.png")
+
+      .visible-xs
+        include header.jade
+      .navbar-collapse.collapse.sidebar-navbar-collapse
+          ul.nav.navbar-nav
+            li
+              a(href='./portada.html')
+                i.icon.icon-home
+                | Portada
+
+            li.visible-xs
+              a(href="./resumen.html")
+                i.icon.icon-presentation
+                | Indicadores de gestion
+
+                
+            li.hidden-xs
+              a.item-collapse.collapsed(role="button" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample")
+                i.icon.icon-presentation
+                | Indicadores de gestion
+                i.fa.fa-caret-up(aria-hidden='true')
+              ul.submenu.collapse(id="collapseExample",aria-expanded="false")
+
+                li
+                  a(href="./resumen.html")
+                    | Resumen de Indicadores
+                li
+                  a(href="./indicadores-de-entrega.html")
+                    | Indicadores de Entrega
+                li
+                  a(href="./proximas-entregas.html")
+                    | Próximas entregas
+                li
+                  a(href="./dias-de-entrega.html")
+                    | Dias de entrega
+
+
+            li
+              a(href='#')
+                i.icon.icon-notebook
+                | Reportes
+            li
+              a(href='#')
+                i.icon.icon-lighting
+                | Incidencias
+
+            li
+              a(href='#')
+                i.icon.icon-billing
+                | Indemnización
+
+            li
+              a(href='#')
+                i.icon.icon-navigation
+                | Emisión
+                span.badge 1,118
+            li
+              a(href='#')
+                i.icon.icon-bucket
+                | Materiales
+            li
+              a(href='#')
+                i.icon.icon-remove-letter
+                | Retiros
+                span.badge 10
+            li
+              a(href='#')
+                i.icon.icon-piggy-bank
+                | Finanzas
+            li
+              button.btn-rounded-dark.center(type='button', data-toggle='modal', data-target='#buscarEnvio')
+                i.fa.fa-search(aria-hidden='true')
+                | Buscar envio
+
+
+            li.visible-xs
+              a.log-out
+                i.fa.fa-sign-out(aria-hidden='true')
+                | Cerrar Sesion
+            li.visible-xs
+              a.user-id
+                i.fa.fa-user-circle-o(aria-hidden='true')
+                | Matias pereira
+            li.visible-xs
+              a.user-id
+                i.fa.fa-user-circle-o(aria-hidden='true')
+                | Administrar Cuenta

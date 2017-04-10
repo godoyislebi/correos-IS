@@ -1,0 +1,28 @@
+.header
+  .col-md-8.col-sm-7
+    p.id-header
+      | Macondo Limitada - Rut: 78.673.739-1
+    h3.title-header
+      | Todos los códigos de Cliente
+    a.change-code(type='button', data-toggle='modal', data-target='#changeCode')
+      i.glyphicon.glyphicon-refresh
+      | cambiar códigos de cliente
+
+
+  .col-md-4.col-sm-5
+    ul.admin.hidden-xs
+      li
+        a.log-out
+          i.fa.fa-sign-out(aria-hidden='true')
+          | Cerrar Sesion
+      li.dropdown
+        a.user-id(type='button', data-toggle='dropdown')
+          i.fa.fa-user-circle-o(aria-hidden='true')
+          | Matias pereira
+          i.fa.fa-caret-down(aria-hidden='true')
+
+        ul.dropdown-menu
+          li
+            a(href='#') Administrar Cuenta
+
+

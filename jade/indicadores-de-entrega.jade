@@ -1,0 +1,134 @@
+doctype html
+html
+  head
+    include resources.jade
+
+    title Correos de Chile
+
+  body   
+    .container-fluid#indicadores-de-gestion
+      .col-md-3.col-sm-3.column-1
+        include menu.jade
+      
+
+      .col-md-9.col-sm-9.nopad.column-2
+        .hidden-xs
+          include header.jade
+
+
+        .col-md-12.content
+          .white-box-content.col-md-12
+            //-Aqui comienda el contenido
+            .col-md-12
+              h2.title-section
+                | Indicadores de gestión
+              h3.lead
+                | Indicadores de entrega
+              p.date-info
+                | Datos actualizados al 02/02/2017 a las 00:00 horas
+                
+            //-Filtros
+            .col-md-12
+              include filtros-productos.jade
+
+            .col-md-12
+              .title-results
+                | Resultado de 
+                strong
+                  | "Todos los productos", "Todas las Regiones", "Todas las comunas"
+              include filtros.jade
+
+
+            .col-md-12
+              h3.subtitle
+                | Gráfico de indicadores de últimas entregas
+              .mostrar-grafico
+                label Mostrar gráfico y tabla por:
+                select.selectpicker(disabled)
+                      option Dias
+                      option Semanas
+                      option Meses
+                
+              //- GRAFICO DE PROXIMAS ENTREGAS
+              .grey-box
+                .col-md-4
+                  select.selectpicker#select-ind-chart(name='select-chart-ind')
+                    option(name='nivel', value='nivel') Nivel de servicio
+                    option(name='efectividad', value='efectividad') Efectividad en la Entrega
+                    option(name='incidencias', value='incidencias') incidencias
+
+                #nivel-ind-chart
+                #incidencias-ind-chart              
+
+
+            .col-md-12
+              h3.subtitle
+                | Tabla de indicadores de últimas entregas
+              span.descargas
+                ul
+                  li
+                    | Descargar Archivo
+                  li
+                    a
+                      i.glyphicon.glyphicon-download-alt
+                      | XLM
+                  li
+                    a
+                      i.glyphicon.glyphicon-download-alt
+                      | TXT
+                  li
+                    a
+                      i.glyphicon.glyphicon-download-alt
+                      | PDF
+
+              table#table-indicadores.table.table-hover.table.table-striped.table-responsive.table-bordered.table-condensed(data-toggle="table"
+                   data-url="https://api.github.com/users/wenzhixin/repos"
+                   data-query-params="queryParams"
+                   data-pagination="true", data-pagination-h-align="center", data-pagination-detail="false")
+
+                thead
+                  tr
+                    th(data-sortable='true', rowspan='2', data-field='id')
+                      | Fecha
+                    th(rowspan='2', data-field='forks_count',data-cell-style="cellGreen")
+                      | Entregados
+
+                    th(rowspan='2', data-field='forks_count', data-cell-style="cellBurdeo")
+                      | No entregados
+
+                    th(rowspan='2', data-field='forks_count', data-cell-style="cellBold")
+                      | Total
+
+                    th(colspan='2')
+                      | Incidentados
+
+                    th(colspan='1', rowspan="2",data-field='watchers_count',data-cell-style="cellPorcentaje")
+                      | Nivel de servicio
+
+                    th(colspan='1', rowspan="2", data-field='forks_count', data-cell-style="cellPorcentaje")
+                      | Efectividad en la entrega
+
+                    
+                  tr
+                    th(data-field='forks_count')
+                      | Cantidad
+
+                    th(data-field='forks_count')
+                      | Porcentaje
+
+
+              ul.leyenda-color
+                li
+                  .red.circle
+                  p 0% - 84%
+                li
+                  .orange.circle
+                  p 85 - 89%
+                li
+                  .green.circle
+                  p 90% - 100%
+
+        
+        include footer.jade
+
+    include modales.jade

@@ -1,0 +1,181 @@
+//- // Modal
+#buscarEnvio.modal.fade(tabindex='-1', role='dialog', aria-labelledby='myModalLabel')
+  .modal-dialog(role='body')
+    .modal-content
+      .modal-header
+        button.close(type='button', data-dismiss='modal', aria-label='Close')
+          span(aria-hidden='true') ×
+        h4#myModalLabel.modal-title
+          p
+            | Buscar Envio
+      .modal-body
+
+        //-MENSAJE WARNING
+        a.volver
+          span.glyphicon.glyphicon-chevron-left(aria-hidden='true')
+          | volver a buscar
+        .alert.alert-warning.alert-dismissible(role='alert')
+          | La búsqueda del número de referencia
+          strong “99887676767699” no está asociada a su Código de Cliente.
+          | Ingrese otro número de referencia y vuelve a intentarlo.
+
+
+        //-CONTENIDO
+        p.label-body
+          | Para buscar uno o varios envíos, primero selecciona número de referencia o número de envío
+        
+        .radio
+          label.white
+            input(type='radio', name='buscarEnvios', checked="", value='2')
+            p
+              | Número de referencia
+        .radio
+          label.white
+            input(type='radio', name='buscarEnvios', value='3')
+            p
+              | Número de envio
+
+        .grey-box
+          .col-md-12
+
+            #buscar2.desc.input-group
+              label
+                | Número de referencia
+              p
+                | Ingresa hasta 10 números de referencia para realizar la búsqueda
+
+              input.form-control(type='text', aria-label='code)')
+              p
+                | Para ingresa más de 1 número de referencia debe separarlos por un espacio o una coma
+
+            #buscar3.desc.input-group(style='display: none;')
+              label
+                | Número de envio
+              p
+                | Ingresa hasta 10 números de envio para realizar la búsqueda
+
+              input.form-control(type='text', aria-label='code)')
+              p
+                | Para ingresa más de 1 número de envio debe separarlos por un espacio o una coma
+
+
+      .modal-footer
+        button.btn-rounded.center(type='button')
+          | Buscar Envios
+
+
+
+//- // Modal
+#changeCode.modal.fade(tabindex='-1', role='dialog', aria-labelledby='myModalLabel')
+  .modal-dialog(role='document')
+    .modal-content
+      .modal-header
+        button.close(type='button', data-dismiss='modal', aria-label='Close')
+          span(aria-hidden='true') ×
+        h4#myModalLabel.modal-title
+          p
+            | Cambiar códigos de cliente
+      .modal-body
+        p.label-body
+          | Selecciona los códigos de cliente en los que quieres operar
+        select#change-code(multiple='multiple')
+          option(value='126556749') 126556749
+          option(value='167656789') 167656789
+          option(value='124345678') 124345678
+          option(value='123464565') 123464565
+          option(value='123452323') 123452323
+          option(value='123456781') 123456781
+
+      .modal-footer
+        button.btn-rounded.center(type='button')
+          | Cambiar códigos de cliente
+
+
+
+//- // Modal
+#detalleEntregas.modal.fade.modal-detail(tabindex='-1', role='dialog', aria-labelledby='myModalLabel')
+  .modal-dialog(role='document')
+    .modal-content
+      .modal-header
+        button.close(type='button', data-dismiss='modal', aria-label='Close')
+          span(aria-hidden='true') ×
+        h4#myModalLabel.modal-title
+          p
+            | Detalles de Entregas
+      .modal-body.row
+        .col-md-12
+          .text-modal
+            p
+              | Entrega 02/02/2017 
+            p
+              | “Todos los Productos”, “Todas las Regiones”, “Todas las comunas”
+
+            .col-md-12.nopad
+              label.white
+                | Estados de entregas
+              select.selectpicker.select-chart
+                option(selected="selected") Todos los estados
+                option option 2
+                option option 3
+
+              span.descargas
+                ul
+                  li
+                    | Descargar Archivo
+                  li
+                    a
+                      i.glyphicon.glyphicon-download-alt
+                      | XLM
+                  li
+                    a
+                      i.glyphicon.glyphicon-download-alt
+                      | TXT
+                  li
+                    a
+                      i.glyphicon.glyphicon-download-alt
+                      | PDF
+
+          .grey-box.detalle-modal
+            table(data-toggle="table"
+                 data-url="https://api.github.com/users/wenzhixin/repos"
+                 data-query-params="queryParams"
+                 data-pagination="true", data-pagination-h-align="center", data-pagination-detail="false").table.table-hover.table.table-striped.table-responsive.table-bordered.table-condensed
+              thead
+                tr(type='button', data-toggle='modal', data-target='#detalleEntregas')
+                 
+                  th(data-field='id', data-sortable='true')
+                    | Nº Envío
+                  th(data-field='forks_count')
+                    | Referencia
+                  th(data-field='forks_count')
+                    | Fecha Admisión
+                  th(data-field='forks_count')
+                    | Destinatario
+                  th(data-field='forks_count')
+                    | Comuna Origen
+                  th(data-field='forks_count')
+                    | Comuna Destino
+                  th(data-field='forks_count')
+                    | Fecha Compra
+                  th(data-field='forks_count')
+                    | Estado
+                  th(data-field='forks_count')
+                    | Fecha Última Incidencia
+                  th(data-field='forks_count')
+                    | Última Incidencia
+                  th(data-field='forks_count')
+                    | Producto
+                  th(data-field='forks_count')
+                    | Bultos
+                  th(data-field='forks_count')
+                    | Peso Documentado
+                  th(data-field='forks_count')
+                    | Peso Real
+                  th(data-field='forks_count')
+                    | Volumen Real
+                  th(data-field='forks_count')
+                    | Dias atraso
+
+              p.red
+                | Tabla con scroll horizontal
+                i.fa.fa-long-arrow-right(aria-hidden="true")

@@ -1,0 +1,31 @@
+.col-md-12.filter-box.grey-box
+    .col-md-12
+      p.text
+        | Se muestran por defecto los últimos 10 dias
+
+    .col-md-6
+      .btn-radio-group(data-toggle='buttons')
+        label.btn.btn-radio.active
+          input#option1(type='radio', name='options', autocomplete='off', checked='')
+          |  10 días
+        label.btn.btn-radio
+          input#option2(type='radio', name='options', autocomplete='off')
+          |  30 días
+        label.btn.btn-radio
+          input#option3(type='radio', name='options', autocomplete='off')
+          |  6 meses
+        label.btn.btn-radio
+          input#option4(type='radio', name='options', autocomplete='off')
+          |  Otro periodo
+
+    .col-md-3.col-sm-6
+      #datepicker1.input-group.date
+        input.form-control(type='text', disabled)
+        span.input-group-addon
+          span.glyphicon.glyphicon-calendar
+
+    .col-md-3.col-sm-6
+      #datepicker2.input-group.date
+        input.form-control(type='text')
+        span.input-group-addon
+          span.glyphicon.glyphicon-calendar

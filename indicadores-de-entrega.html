@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="./css/styles.css">
+    <link rel="stylesheet" type="text/css" href="./css/bootstrap-datetimepicker.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.0/bootstrap-table.min.css" rel="stylesheet">
+    <link href="./css/font-awesome.min.css" rel="stylesheet">
+    <link href="./css/bootstrap-multiselect.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/css/bootstrap-select.min.css">
+    <script src="./js/jquery-3.1.1.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/functions.js"></script>
+    <script src="./js/moment.js"></script>
+    <script src="./js/bootstrap-datetimepicker.js"></script>
+    <script src="./js/es.js"></script>
+    <script src="./js/bootstrap-multiselect.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.0/bootstrap-table.min.js"></script>
+    <script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
+    <script src="https://www.amcharts.com/lib/3/serial.js"></script>
+    <script src="https://www.amcharts.com/lib/3/plugins/export/export.min.js"></script>
+    <script src="https://www.amcharts.com/lib/3/themes/light.js"></script>
+    <script src="https://www.amcharts.com/lib/3/lang/es.js"></script>
+    <script src="./js/charts.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/js/bootstrap-select.min.js"></script>
+    <title>Correos de Chile</title>
+  </head>
+  <body>  
+    <div class="container-fluid" id="indicadores-de-gestion">
+      <div class="col-md-3 col-sm-3 column-1">
+        <div class="row menu-lateral">
+          <div class="col-md-12 hidden-xs logo"><a href="#"><img src="./assets/logo.png"></a></div>
+          <div class="col-md-12 col-xs-12 nopad">
+            <div class="sidebar-nav">
+              <div class="navbar navbar-default" role="navigation"> 
+                <div class="navbar-header">       
+                  <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".sidebar-navbar-collapse"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><span class="visible-xs navbar-brand"><a class="logo-xs" href="#"><img src="./assets/logo.png"></a></span>
+                </div>
+              </div>
+              <div class="visible-xs">
+                <div class="header">
+                  <div class="col-md-8 col-sm-7">
+                    <p class="id-header">Macondo Limitada - Rut: 78.673.739-1</p>
+                    <h3 class="title-header">Todos los códigos de Cliente</h3><a class="change-code" type="button" data-toggle="modal" data-target="#changeCode"><i class="glyphicon glyphicon-refresh"></i>cambiar códigos de cliente</a>
+                  </div>
+                  <div class="col-md-4 col-sm-5">
+                    <ul class="admin hidden-xs">
+                      <li><a class="log-out"><i class="fa fa-sign-out" aria-hidden="true"></i>Cerrar Sesion</a></li>
+                      <li class="dropdown"><a class="user-id" type="button" data-toggle="dropdown"><i class="fa fa-user-circle-o" aria-hidden="true"></i>Matias pereira<i class="fa fa-caret-down" aria-hidden="true"></i></a>
+                        <ul class="dropdown-menu">
+                          <li><a href="#">Administrar Cuenta</a></li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="navbar-collapse collapse sidebar-navbar-collapse">
+                <ul class="nav navbar-nav">
+                  <li><a href="./portada.html"><i class="icon icon-home"></i>Portada</a></li>
+                  <li class="visible-xs"><a href="./resumen.html"><i class="icon icon-presentation"></i>Indicadores de gestion</a></li>
+                  <li class="hidden-xs"><a class="item-collapse collapsed" role="button" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample"><i class="icon icon-presentation"></i>Indicadores de gestion<i class="fa fa-caret-up" aria-hidden="true"></i></a>
+                    <ul class="submenu collapse" id="collapseExample" aria-expanded="false">
+                      <li><a href="./resumen.html">Resumen de Indicadores</a></li>
+                      <li><a href="./indicadores-de-entrega.html">Indicadores de Entrega</a></li>
+                      <li><a href="./proximas-entregas.html">Próximas entregas</a></li>
+                      <li><a href="./dias-de-entrega.html">Dias de entrega</a></li>
+                    </ul>
+                  </li>
+                  <li><a href="#"><i class="icon icon-notebook"></i>Reportes</a></li>
+                  <li><a href="#"><i class="icon icon-lighting"></i>Incidencias</a></li>
+                  <li><a href="#"><i class="icon icon-billing"></i>Indemnización</a></li>
+                  <li><a href="#"><i class="icon icon-navigation"></i>Emisión<span class="badge">1,118</span></a></li>
+                  <li><a href="#"><i class="icon icon-bucket"></i>Materiales</a></li>
+                  <li><a href="#"><i class="icon icon-remove-letter"></i>Retiros<span class="badge">10</span></a></li>
+                  <li><a href="#"><i class="icon icon-piggy-bank"></i>Finanzas</a></li>
+                  <li>
+                    <button class="btn-rounded-dark center" type="button" data-toggle="modal" data-target="#buscarEnvio"><i class="fa fa-search" aria-hidden="true"></i>Buscar envio</button>
+                  </li>
+                  <li class="visible-xs"><a class="log-out"><i class="fa fa-sign-out" aria-hidden="true"></i>Cerrar Sesion</a></li>
+                  <li class="visible-xs"><a class="user-id"><i class="fa fa-user-circle-o" aria-hidden="true"></i>Matias pereira</a></li>
+                  <li class="visible-xs"><a class="user-id"><i class="fa fa-user-circle-o" aria-hidden="true"></i>Administrar Cuenta</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-9 col-sm-9 nopad column-2">
+        <div class="hidden-xs">
+          <div class="header">
+            <div class="col-md-8 col-sm-7">
+              <p class="id-header">Macondo Limitada - Rut: 78.673.739-1</p>
+              <h3 class="title-header">Todos los códigos de Cliente</h3><a class="change-code" type="button" data-toggle="modal" data-target="#changeCode"><i class="glyphicon glyphicon-refresh"></i>cambiar códigos de cliente</a>
+            </div>
+            <div class="col-md-4 col-sm-5">
+              <ul class="admin hidden-xs">
+                <li><a class="log-out"><i class="fa fa-sign-out" aria-hidden="true"></i>Cerrar Sesion</a></li>
+                <li class="dropdown"><a class="user-id" type="button" data-toggle="dropdown"><i class="fa fa-user-circle-o" aria-hidden="true"></i>Matias pereira<i class="fa fa-caret-down" aria-hidden="true"></i></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="#">Administrar Cuenta</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-12 content">
+          <div class="white-box-content col-md-12">
+            <div class="col-md-12">
+              <h2 class="title-section">Indicadores de gestión</h2>
+              <h3 class="lead">Indicadores de entrega</h3>
+              <p class="date-info">Datos actualizados al 02/02/2017 a las 00:00 horas</p>
+            </div>
+            <div class="col-md-12">
+              <div class="col-md-12 filter-box grey-box filtros-productos">
+                <div class="col-md-6">
+                  <div class="label-filter">
+                    <div class="col-md-3 label-filter">Productos</div>
+                    <div class="col-md-9">
+                      <select id="products">
+                        <option value="Todos los productos" selected="selected">Todos los productos</option>
+                        <option value="Paquete Express a domicilio">Paquete Express a domicilio</option>
+                        <option value="Documento Express">Documento Express</option>
+                        <option value="Paquete Express AM">Paquete Express AM</option>
+                        <option value="Documento Express AM">Documento Express AM</option>
+                        <option value="Paquete Express Sucursal">Paquete Express Sucursal</option>
+                        <option value="Distribución física">Distribución física</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="clearfix"></div>
+                <div class="col-md-6">
+                  <div class="label-filter">
+                    <div class="col-md-3 label-filter">Regiones</div>
+                    <div class="col-md-9">
+                      <select id="regiones" multiple="multiple">
+                        <option value="I Región de Tárapaca">I Región de Tárapaca</option>
+                        <option value="II Región de Antofagasta">II Región de Antofagasta</option>
+                        <option value="III Región de Atacama">III Región de Atacama</option>
+                        <option value="IV Región de Coquimbo">IV Región de Coquimbo</option>
+                        <option value="V Región de Valparaíso">V Región de Valparaíso</option>
+                        <option value="VI Región de OHiggins">VI Región de O'Higgins</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="label-filter">
+                    <div class="col-md-3 label-filter">Comuna</div>
+                    <div class="col-md-9">
+                      <select id="comuna" multiple="multiple">
+                        <option value="Algarrobo">Algarrobo</option>
+                        <option value="Cabildo">Cabildo</option>
+                        <option value="La Calera">La Calera</option>
+                        <option value="Calle Larga">Calle Larga</option>
+                        <option value="Cartagena">Cartagena</option>
+                        <option value="Casablanca">Casablanca</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-12 center">
+                  <button class="btn-rounded-dark center" type="button">Filtrar indicadores de entrega</button>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="title-results">Resultado de <strong>"Todos los productos", "Todas las Regiones", "Todas las comunas"</strong></div>
+              <div class="col-md-12 filter-box grey-box">
+                <div class="col-md-12">
+                  <p class="text">Se muestran por defecto los últimos 10 dias</p>
+                </div>
+                <div class="col-md-6">
+                  <div class="btn-radio-group" data-toggle="buttons">
+                    <label class="btn btn-radio active">
+                      <input id="option1" type="radio" name="options" autocomplete="off" checked=""> 10 días
+                    </label>
+                    <label class="btn btn-radio">
+                      <input id="option2" type="radio" name="options" autocomplete="off"> 30 días
+                    </label>
+                    <label class="btn btn-radio">
+                      <input id="option3" type="radio" name="options" autocomplete="off"> 6 meses
+                    </label>
+                    <label class="btn btn-radio">
+                      <input id="option4" type="radio" name="options" autocomplete="off"> Otro periodo
+                    </label>
+                  </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                  <div class="input-group date" id="datepicker1">
+                    <input class="form-control" type="text" disabled><span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+                  </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                  <div class="input-group date" id="datepicker2">
+                    <input class="form-control" type="text"><span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <h3 class="subtitle">Gráfico de indicadores de últimas entregas</h3>
+              <div class="mostrar-grafico">
+                <label>Mostrar gráfico y tabla por:</label>
+                <select class="selectpicker" disabled>
+                  <option>Dias</option>
+                  <option>Semanas</option>
+                  <option>Meses</option>
+                </select>
+              </div>
+              <div class="grey-box">
+                <div class="col-md-4">
+                  <select class="selectpicker" id="select-ind-chart" name="select-chart-ind">
+                    <option name="nivel" value="nivel">Nivel de servicio</option>
+                    <option name="efectividad" value="efectividad">Efectividad en la Entrega</option>
+                    <option name="incidencias" value="incidencias">incidencias</option>
+                  </select>
+                </div>
+                <div id="nivel-ind-chart"></div>
+                <div id="incidencias-ind-chart">             </div>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <h3 class="subtitle">Tabla de indicadores de últimas entregas</h3><span class="descargas">
+                <ul>
+                  <li>Descargar Archivo</li>
+                  <li><a><i class="glyphicon glyphicon-download-alt"></i>XLM</a></li>
+                  <li><a><i class="glyphicon glyphicon-download-alt"></i>TXT</a></li>
+                  <li><a><i class="glyphicon glyphicon-download-alt"></i>PDF</a></li>
+                </ul></span>
+              <table class="table table-hover table table-striped table-responsive table-bordered table-condensed" id="table-indicadores" data-toggle="table" data-url="https://api.github.com/users/wenzhixin/repos" data-query-params="queryParams" data-pagination="true" data-pagination-h-align="center" data-pagination-detail="false">
+                <thead>
+                  <tr>
+                    <th data-sortable="true" rowspan="2" data-field="id">Fecha</th>
+                    <th rowspan="2" data-field="forks_count" data-cell-style="cellGreen">Entregados</th>
+                    <th rowspan="2" data-field="forks_count" data-cell-style="cellBurdeo">No entregados</th>
+                    <th rowspan="2" data-field="forks_count" data-cell-style="cellBold">Total</th>
+                    <th colspan="2">Incidentados</th>
+                    <th colspan="1" rowspan="2" data-field="watchers_count" data-cell-style="cellPorcentaje">Nivel de servicio</th>
+                    <th colspan="1" rowspan="2" data-field="forks_count" data-cell-style="cellPorcentaje">Efectividad en la entrega</th>
+                  </tr>
+                  <tr>
+                    <th data-field="forks_count">Cantidad</th>
+                    <th data-field="forks_count">Porcentaje</th>
+                  </tr>
+                </thead>
+              </table>
+              <ul class="leyenda-color">
+                <li>
+                  <div class="red circle"></div>
+                  <p>0% - 84%</p>
+                </li>
+                <li>
+                  <div class="orange circle"></div>
+                  <p>85 - 89%</p>
+                </li>
+                <li>
+                  <div class="green circle"></div>
+                  <p>90% - 100%</p>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <footer id="footer"><img src="./assets/logo.png"></footer>
+      </div>
+    </div>
+    <div class="modal fade" id="buscarEnvio" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="body">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+            <h4 class="modal-title" id="myModalLabel">
+              <p>Buscar Envio</p>
+            </h4>
+          </div>
+          <div class="modal-body"><a class="volver"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>volver a buscar</a>
+            <div class="alert alert-warning alert-dismissible" role="alert">La búsqueda del número de referencia<strong>“99887676767699” no está asociada a su Código de Cliente.</strong>Ingrese otro número de referencia y vuelve a intentarlo.</div>
+            <p class="label-body">Para buscar uno o varios envíos, primero selecciona número de referencia o número de envío</p>
+            <div class="radio">
+              <label class="white">
+                <input type="radio" name="buscarEnvios" checked="" value="2">
+                <p>Número de referencia</p>
+              </label>
+            </div>
+            <div class="radio">
+              <label class="white">
+                <input type="radio" name="buscarEnvios" value="3">
+                <p>Número de envio</p>
+              </label>
+            </div>
+            <div class="grey-box">
+              <div class="col-md-12">
+                <div class="desc input-group" id="buscar2">
+                  <label>Número de referencia</label>
+                  <p>Ingresa hasta 10 números de referencia para realizar la búsqueda</p>
+                  <input class="form-control" type="text" aria-label="code)">
+                  <p>Para ingresa más de 1 número de referencia debe separarlos por un espacio o una coma</p>
+                </div>
+                <div class="desc input-group" id="buscar3" style="display: none;">
+                  <label>Número de envio</label>
+                  <p>Ingresa hasta 10 números de envio para realizar la búsqueda</p>
+                  <input class="form-control" type="text" aria-label="code)">
+                  <p>Para ingresa más de 1 número de envio debe separarlos por un espacio o una coma</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button class="btn-rounded center" type="button">Buscar Envios</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="changeCode" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+            <h4 class="modal-title" id="myModalLabel">
+              <p>Cambiar códigos de cliente</p>
+            </h4>
+          </div>
+          <div class="modal-body">
+            <p class="label-body">Selecciona los códigos de cliente en los que quieres operar</p>
+            <select id="change-code" multiple="multiple">
+              <option value="126556749">126556749</option>
+              <option value="167656789">167656789</option>
+              <option value="124345678">124345678</option>
+              <option value="123464565">123464565</option>
+              <option value="123452323">123452323</option>
+              <option value="123456781">123456781</option>
+            </select>
+          </div>
+          <div class="modal-footer">
+            <button class="btn-rounded center" type="button">Cambiar códigos de cliente</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade modal-detail" id="detalleEntregas" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+            <h4 class="modal-title" id="myModalLabel">
+              <p>Detalles de Entregas</p>
+            </h4>
+          </div>
+          <div class="modal-body row">
+            <div class="col-md-12">
+              <div class="text-modal">
+                <p>Entrega 02/02/2017 </p>
+                <p>“Todos los Productos”, “Todas las Regiones”, “Todas las comunas”</p>
+                <div class="col-md-12 nopad">
+                  <label class="white">Estados de entregas</label>
+                  <select class="selectpicker select-chart">
+                    <option selected="selected">Todos los estados</option>
+                    <option>option 2</option>
+                    <option>option 3</option>
+                  </select><span class="descargas">
+                    <ul>
+                      <li>Descargar Archivo</li>
+                      <li><a><i class="glyphicon glyphicon-download-alt"></i>XLM</a></li>
+                      <li><a><i class="glyphicon glyphicon-download-alt"></i>TXT</a></li>
+                      <li><a><i class="glyphicon glyphicon-download-alt"></i>PDF</a></li>
+                    </ul></span>
+                </div>
+              </div>
+              <div class="grey-box detalle-modal">
+                <table class="table table-hover table table-striped table-responsive table-bordered table-condensed" data-toggle="table" data-url="https://api.github.com/users/wenzhixin/repos" data-query-params="queryParams" data-pagination="true" data-pagination-h-align="center" data-pagination-detail="false">
+                  <thead>
+                    <tr type="button" data-toggle="modal" data-target="#detalleEntregas">
+                      <th data-field="id" data-sortable="true">Nº Envío</th>
+                      <th data-field="forks_count">Referencia</th>
+                      <th data-field="forks_count">Fecha Admisión</th>
+                      <th data-field="forks_count">Destinatario</th>
+                      <th data-field="forks_count">Comuna Origen</th>
+                      <th data-field="forks_count">Comuna Destino</th>
+                      <th data-field="forks_count">Fecha Compra</th>
+                      <th data-field="forks_count">Estado</th>
+                      <th data-field="forks_count">Fecha Última Incidencia</th>
+                      <th data-field="forks_count">Última Incidencia</th>
+                      <th data-field="forks_count">Producto</th>
+                      <th data-field="forks_count">Bultos</th>
+                      <th data-field="forks_count">Peso Documentado</th>
+                      <th data-field="forks_count">Peso Real</th>
+                      <th data-field="forks_count">Volumen Real</th>
+                      <th data-field="forks_count">Dias atraso</th>
+                    </tr>
+                  </thead>
+                  <p class="red">Tabla con scroll horizontal<i class="fa fa-long-arrow-right" aria-hidden="true"></i></p>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

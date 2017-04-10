@@ -1,0 +1,121 @@
+doctype html
+html
+  head
+    include resources.jade
+
+    title Correos de Chile
+
+  body
+    .container-fluid#indicadores-de-gestion
+      .col-md-3.col-sm-3.column-1
+        include menu.jade
+
+
+      .col-md-9.col-sm-9.nopad.column-2
+        .hidden-xs
+          include header.jade
+
+
+        .col-md-12.content
+          .col-md-12.white-box-content
+            //-Aqui comienda el contenido
+            .col-md-12
+              h2.title-section
+                | Indicadores de gestión
+              h3.lead
+                | Resumen de indicadores
+              p.date-info
+                | Datos actualizados al 02/02/2017 a las 00:00 horas
+
+            //-Filtros
+            .col-md-12
+              include filtros.jade
+
+            .col-md-12
+              .col-md-12.grey-box.donut-block
+                .col-md-4
+                  .white-box
+                    .help.flex-item(type='button', data-toggle='popover',data-placement="top", title='Ayuda', data-content="And here's some amazing content. It's very engaging. Right?")
+                      i.fa.fa-question(aria-hidden='true')
+                      
+                    
+                    .donut-chart.chart2
+                      .slice.one
+                      .slice.two
+                      .chart-center
+                        span
+
+                    h4
+                      | Nivel de Servicio
+
+                .col-md-4
+                  .white-box
+                    .help.flex-item(type='button', data-toggle='popover',data-placement="top", title='Ayuda', data-content="And here's some amazing content. It's very engaging. Right?")
+                      i.fa.fa-question(aria-hidden='true')
+
+                    .donut-chart.chart1
+                      .slice.one
+                      .slice.two
+                      .chart-center
+                        span
+                    h4
+                      | Efectividad en la entrega
+
+
+                .col-md-4
+                  .white-box
+                    .help.flex-item(type='button', data-toggle='popover',data-placement="top", title='Ayuda', data-content="And here's some amazing content. It's very engaging. Right?")
+                      i.fa.fa-question(aria-hidden='true')
+                        
+                    .circle
+                      p
+                        | 1.1
+                    h4
+                      | Dias promedio de entrega
+
+
+              .col-md-12.grey-box
+                .col-md-12.info-resumen
+                  .col-md-12.white-box
+                    .col-md-4.big-box.border-right.flex-item
+                      span
+                        h3
+                          | 7.654
+                        p
+                          | Total Envios
+
+                    .col-md-8.big-box
+                      .row.border-right-bottom-info
+                        .col-md-6.small-box.border-right.flex-item
+                          span
+                            h4
+                              | 6.987
+                            p
+                              | Entregas en Tiempo
+
+                        .col-md-6.small-box.flex-item
+                          span
+                            h4
+                              | 211
+                            p
+                              | No entregados
+                      .row
+                        .col-md-6.small-box.border-right.flex-item
+                          span
+                            h4
+                              |  667
+                            p
+                              | Entregas Fuera de tiempo
+
+                        .col-md-6.small-box.flex-item
+                          span
+                            h4
+                              | 150
+                            p
+                              |Incidencias
+                            a(href="")
+                              | Gestionar incidencias
+
+        include footer.jade
+
+    include modales.jade
