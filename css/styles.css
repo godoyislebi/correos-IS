@@ -549,7 +549,7 @@ p.red {
 
 .leyenda-color {
   float: right;
-  margin-top: -50px;
+  margin-top: 0px;
   padding: 0; }
   @media (max-width: 767px) {
     .leyenda-color {
@@ -759,3 +759,37 @@ a.volver {
   -ms-flex-align: center;
   align-items: center;
   /* align vertical */ }
+
+#datos-indicadores th, #indicadores-proximas-entregas th {
+      position: relative;
+      min-height: 41px;
+    }
+#datos-indicadores th span, #indicadores-proximas-entregas th span{
+      display: block;
+      position: absolute;
+      left: 0;
+      right: 0;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+
+}
+
+#tabla-proximas-entregas th{
+  position: relative;
+  min-height: 41px;
+}
+
+#tabla-proximas-entregas th span{
+  display: block;
+      position: absolute;
+      left: 0;
+      right: 0;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+}
+
+
+
+

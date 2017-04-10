@@ -135,13 +135,13 @@ $(document).ready(function () {
 
 
     //Open modal click row table
-    var $table = $('#table-indicadores').bootstrapTable({
+  /*  var $table = $('#table-indicadores').bootstrapTable({
         onClickRow: function (item, $element) {
         return false,
         console.log("click row"),
         $('#detalleEntregas').modal('show')
         },
-    });
+    });*/
 
 
     /*function cellStyle(value, row, index) {
@@ -234,15 +234,48 @@ function cellPorcentaje(value, row, index, field) {
 $(document).ready(function() {
     // jQuery update a column title from the demo table to contain a long description
     // You would not need to do this in your own code.
-    $('#example thead tr:eq(0) th:eq(2)').html("This is a really long column title!");
+    $('#datos-indicadores thead tr:eq(0) th:eq(2)').html("Días de entrega");
      
     // Wrap the colspan'ing header cells with a span so they can be positioned
     // absolutely - filling the available space, and no more.
-    $('#example thead th[colspan]').wrapInner( '<span/>' ).append( '&nbsp;' );
+    $('#datos-indicadores thead th[colspan]').wrapInner( '<span/>' ).append( '&nbsp;' );
  
     // Standard initialisation
-    $('#example').DataTable( {
+    $('#datos-indicadores').DataTable( {
         responsive: true,
         paging: false
     } );
 } );
+
+$(document).ready(function() {
+    // jQuery update a column title from the demo table to contain a long description
+    // You would not need to do this in your own code.
+    $('#indicadores-proximas-entregas thead tr:eq(0) th:eq(2)').html("Días");
+     
+    // Wrap the colspan'ing header cells with a span so they can be positioned
+    // absolutely - filling the available space, and no more.
+    $('#indicadores-proximas-entregas thead th[colspan]').wrapInner( '<span/>' ).append( '&nbsp;' );
+ 
+    // Standard initialisation
+    $('#indicadores-proximas-entregas').DataTable( {
+        responsive: true,
+        paging: false
+    } );
+} );
+
+$(document).ready(function() {
+    // jQuery update a column title from the demo table to contain a long description
+    // You would not need to do this in your own code.
+    $('#tabla-proximas-entregas thead tr:eq(0) th:eq(2)').html("Días");
+     
+    // Wrap the colspan'ing header cells with a span so they can be positioned
+    // absolutely - filling the available space, and no more.
+    $('#tabla-proximas-entregas thead th[colspan]').wrapInner( '<span/>' ).append( '&nbsp;' );
+ 
+    // Standard initialisation
+    $('#tabla-proximas-entregas').DataTable( {
+        responsive: true,
+        paging: false
+    } );
+} );
+
