@@ -134,8 +134,8 @@ $(document).ready(function () {
 
 
 
-    //Open modal click row table
-  /*  var $table = $('#table-indicadores').bootstrapTable({
+    /*//Open modal click row table
+     var $table = $('#table-indicadores').bootstrapTable({
         onClickRow: function (item, $element) {
         return false,
         console.log("click row"),
@@ -279,3 +279,13 @@ $(document).ready(function() {
     } );
 } );
 
+        
+$(document).ready(function() {    
+    $('#detalleEntrega-table').DataTable( {
+        responsive: true,
+        columnDefs: [
+            { responsivePriority: 1, targets: 0 },
+            { responsivePriority: 2, targets: -1 }
+    ]
+} );
+});
